@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-        <title>Countdown Clock</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-
-    <body>
-        <div class="timer">
-            <div class="timer__controls">
-              <button data-time="20" class="timer__button">20 Secs</button>
-              <button data-time="300" class="timer__button">Work 5</button>
-              <button data-time="900" class="timer__button">Quick 15</button>
-              <button data-time="1200" class="timer__button">Snack 20</button>
-              <button data-time="3600" class="timer__button">Lunch Break</button>
-              <form name="customForm" id="custom">
-                <input type="text" name="minutes" placeholder="Enter Minutes">
-              </form>
-            </div>
-            <div class="display">
-              <h1 class="display__time-left"></h1>
-              <p class="display__end-time"></p>
-            </div>
-          </div>
-        <script src="lib/script.js"></script>
-    </body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="timer-container" aria-label="Countdown Timer">
+      <header>
+        <h1 class="timer-title">Countdown Timer</h1>
+      </header>
+      <section class="timer-controls" aria-label="Preset Timers">
+        <button data-time="20" class="timer-btn" aria-label="20 seconds">20 Secs</button>
+        <button data-time="300" class="timer-btn" aria-label="5 minutes">Work 5</button>
+        <button data-time="900" class="timer-btn" aria-label="15 minutes">Quick 15</button>
+        <button data-time="1200" class="timer-btn" aria-label="20 minutes">Snack 20</button>
+        <button data-time="3600" class="timer-btn" aria-label="60 minutes">Lunch Break</button>
+      </section>
+      <form name="customForm" id="custom" class="timer-form" aria-label="Custom Timer">
+        <input type="number" name="minutes" min="1" max="180" placeholder="Enter Minutes" aria-label="Enter minutes" required>
+        <button type="submit" class="timer-btn timer-btn--submit">Start</button>
+      </form>
+      <section class="timer-display" aria-live="polite">
+        <h2 class="display__time-left" aria-label="Time Left"></h2>
+        <p class="display__end-time" aria-label="End Time"></p>
+      </section>
+    </main>
+    <script src="lib/script.js"></script>
+  </body>
+</html>
